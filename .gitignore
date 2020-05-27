@@ -1,0 +1,13 @@
+/.idea/
+/common/.mvn/wrapper/
+/common/mvnw
+/common/mvnw.cmd
+/core/.mvn/wrapper/
+/core/mvnw
+/core/mvnw.cmd
+/gateway/.mvn/wrapper/
+/gateway/mvnw
+/gateway/mvnw.cmd
+/img/.mvn/wrapper/
+/img/mvnw
+/img/mvnw.cmd
