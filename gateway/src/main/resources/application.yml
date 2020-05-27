@@ -1,0 +1,26 @@
+server:
+    port: 8004
+# 配置应用程序名称
+spring:
+    application:
+        name: cloud-gateway
+
+# eureka配置 客户端配置，注册到服务中心
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8001/eureka/
+
+zuul:
+    routes:
+        core:
+            path: /cloud-core/**
+            serviceId: cloud-core
+        img:
+            path: /cloud-img/**
+            serviceId: cloud-img
+        appointment:
+            path: /cloud-appointment/**
+            serviceId: cloud-appointment
+    host:
+        connect-timeout-millis: 6000

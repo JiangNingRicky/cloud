@@ -1,0 +1,42 @@
+server:
+  port: 8002
+# 配置应用程序名称
+spring:
+  application:
+    name: cloud-core
+  redis:
+    database: 0
+    host: 121.42.50.111
+    port: 6379
+    password: Jiangning7529;
+    jedis:
+      pool:
+        max-active: 200
+        max-wait: -1
+        max-idle: 10
+        min-idle: 0
+    timeout: 1000
+
+  kafka:
+    producer:
+      retries: 0
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: user-log-group
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    bootstrap-servers: 121.42.50.111:9092
+
+
+
+# eureka配置 客户端配置，注册到服务中心
+eureka:
+  client:
+     service-url:
+        defaultZone: http://localhost:8001/eureka/

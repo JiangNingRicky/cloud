@@ -1,0 +1,12 @@
+server:
+  port: 8005
+# 配置应用程序名称
+spring:
+  application:
+    name: cloud-img
+
+# eureka配置 客户端配置，注册到服务中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
